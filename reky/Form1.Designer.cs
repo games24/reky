@@ -105,6 +105,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(149, 23);
             this.button4.TabIndex = 3;
+            this.button4.Text = "ゲームセンターCX";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -144,6 +145,7 @@
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(149, 23);
             this.button8.TabIndex = 7;
+            this.button8.Text = "奇妙な科学実験史";
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
@@ -153,6 +155,7 @@
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(149, 23);
             this.button9.TabIndex = 8;
+            this.button9.Text = "東京エンカウント";
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
@@ -182,6 +185,7 @@
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(149, 23);
             this.button12.TabIndex = 11;
+            this.button12.Text = "脳トリック";
             this.button12.UseVisualStyleBackColor = true;
             this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
@@ -201,7 +205,6 @@
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(149, 23);
             this.button14.TabIndex = 13;
-            this.button14.Text = "コンピュータの動作と管理";
             this.button14.UseVisualStyleBackColor = true;
             this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
@@ -211,7 +214,6 @@
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(149, 23);
             this.button15.TabIndex = 14;
-            this.button15.Text = "コンピュータと人間の接点";
             this.button15.UseVisualStyleBackColor = true;
             this.button15.Click += new System.EventHandler(this.button15_Click);
             // 

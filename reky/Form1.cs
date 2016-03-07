@@ -22,7 +22,49 @@ namespace reky
         public void video(string aa)
         {
             this.Text = aa;
-            if (aa=="")
+            if (aa == "")
+            {
+                return;
+            }
+            string[] hairetu = Directory.GetFiles(@"E:\Users\ttanakattarou\Videos\");
+            var d = from z in hairetu where true == z.Contains(aa) select z;
+            foreach (var item in d)
+            {
+                
+                
+                Regex regex = new Regex(@"\d.*\.ts$");
+                MatchCollection matchCol = regex.Matches(item);
+                Match xxx = null;
+                foreach (Match match in matchCol)
+                {
+                    xxx = match;
+                }
+                if (xxx == null)
+                {
+                    System.IO.File.Delete(item);
+                    continue;
+                }
+                
+                System.IO.Directory.CreateDirectory(@"E:\Users\ttanakattarou\Videos\" + aa);
+
+                System.IO.File.Move(item, @"E:\Users\ttanakattarou\Videos\" + aa + @"\" + xxx);
+
+
+
+                
+
+                //System.IO.File.Delete(item);
+
+
+
+
+
+            }
+        }
+        public void video2(string aa)
+        {
+            this.Text = aa;
+            if (aa == "")
             {
                 return;
             }
@@ -39,7 +81,7 @@ namespace reky
                 {
                     continue;
                 }
-                
+
                 BinaryReader br = new BinaryReader(fs);//バイナリリーダー
 
                 Regex regex = new Regex(@"\d.*\.ts$");
@@ -61,7 +103,7 @@ namespace reky
                     var a = br.ReadBytes((int)fs.Length);//現在のストリームから引数の数値分読み込む
 
                     System.IO.Directory.CreateDirectory(@"E:\Users\ttanakattarou\Videos\" + aa);
-                    FileStream file = new FileStream(@"E:\Users\ttanakattarou\Videos\"+aa+@"\" + xxx, FileMode.Create, FileAccess.ReadWrite);
+                    FileStream file = new FileStream(@"E:\Users\ttanakattarou\Videos\" + aa + @"\" + xxx, FileMode.Create, FileAccess.ReadWrite);
                     file.Seek(0, SeekOrigin.Begin);//シークの開始位置 移動場所
                     file.Write(a, 0, a.Count());//byte配列 配列の何番目から書き込みを開始位置 書き込みバイト数
 
@@ -91,7 +133,7 @@ namespace reky
                     buf.Add(abbu);
 
 
-                    System.IO.Directory.CreateDirectory(@"E:\Users\ttanakattarou\Videos\"+aa);
+                    System.IO.Directory.CreateDirectory(@"E:\Users\ttanakattarou\Videos\" + aa);
                     FileStream file = new FileStream(@"E:\Users\ttanakattarou\Videos\" + aa + @"\" + xxx, FileMode.Create, FileAccess.ReadWrite);
                     file.Seek(0, SeekOrigin.Begin);//シークの開始位置 移動場所
 
@@ -186,7 +228,7 @@ namespace reky
 
         private void button14_Click(object sender, EventArgs e)
         {
-            video("コンピュータの動作と管理");
+            video(button14.Text);
 
         }
 
@@ -197,7 +239,7 @@ namespace reky
 
         private void button15_Click(object sender, EventArgs e)
         {
-            video("コンピュータと人間の接点");
+            video(button15.Text);
         }
 
         private void button16_Click(object sender, EventArgs e)
